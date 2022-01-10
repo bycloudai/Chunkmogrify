@@ -60,6 +60,7 @@ Requirements:
 Python 3.7 or newer
   
 We are going to use Anaconda3, download [Anaconda3](https://www.anaconda.com/products/individual) if you don't have it.  
+Follow this YouTube [tutorial]() to understand the installation process more easily and if you have any questions feel free to join my [discord](https://discord.gg/sE8R7e45MV) and ask there.
 
 1. Create conda environment:
 ```
@@ -89,7 +90,9 @@ conda activate chunkmogrify
 
 4. download the files:
 
-Choose a place you want to **clone**/download this repository, and `cd` into the base folder in Anaconda Prompt of the folder you just cloned/downloaded. Then enter the following commands:
+Choose a place you want to **clone**/download this repository, and `cd` into the base folder in Anaconda Prompt of the folder you just cloned/downloaded. 
+
+5. Install dependencies:
 ```
 pip install -r requirements.txt
 ```
@@ -100,7 +103,7 @@ If it gives you error related to C++ compiling, try installing [this](https://gi
 conda activate chunkmogrify
 ```
 
-5. Run `python app.py`. When running for the first time, it will automatically download required
+6. Run `python app.py`. When running for the first time, it will automatically download required
 resources, which are also several hundred megabytes. Progression of the download can be monitored
 in the command line window. 
   
