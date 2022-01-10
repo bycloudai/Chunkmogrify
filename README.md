@@ -59,19 +59,50 @@ but the operations become so slow that the user experience is not enjoyable.
 Requirements:  
 Python 3.7 or newer
   
-Note: If you are using Anaconda, I recommend creating a new environment to run this project.
-Packages installed with conda and pip often don't play together very nicely.  
-  
-Steps to be able to successfully run the project:  
-1) Clone or download the repository and open a terminal / Powershell instance in the directory.  
-2) Install the required python packages by running `pip install -r requirements.txt`. This
-might take a while, since it will download a few packages which will be several hundred MBs of data.
-Some packages might need to compile their extensions (as well as this project itself), so a C++
-compiler needs to be present. On Linux, this is typically not an issue, but running on Windows might
-require Visual Studio and CUDA installations to successfully setup the project.
-3) Run `python app.py`. When running for the first time, it will automatically download required
+We are going to use Anaconda3, download [Anaconda3](https://www.anaconda.com/products/individual) if you don't have it.  
+
+1. Create conda environment:
+```
+conda create -n chunkmogrify python=3.7
+conda activate chunkmogrify
+```
+2. option 1: Setup conda environment for nvidia non-30 series GPU:
+```
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+```
+after that, download [this](https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork)
+
+Then go to search bar: "Edit the System Environment Variables" >> Environment Variables >> Path (within System Variables Section) >> Then move any 10.2 CUDA to the very top. Eg: <br/> ![image](https://user-images.githubusercontent.com/29135514/148821077-da02e818-dfd4-45fd-b3a9-67e744702d35.png)
+
+2. option 2: Setup conda environment for nvidia 30 series GPU:
+```
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+```
+after that, download [this](https://developer.nvidia.com/cuda-11.1.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork)
+
+Then go to search bar: "Edit the System Environment Variables" >> Environment Variables >> Path (within System Variables Section) >> Then move any 11.1 CUDA to the very top. Eg: <br/> ![image](https://user-images.githubusercontent.com/29135514/148821001-eeed3ec8-567a-4d48-9851-0b606dd6b277.png)
+
+3. Close your Anaconda Prompt and reopen it. Activate your environment again with:
+```
+conda activate chunkmogrify
+```
+
+4. download the files:
+
+Choose a place you want to **clone**/download this repository, and `cd` into the base folder in Anaconda Prompt of the folder you just cloned/downloaded. Then enter the following commands:
+```
+pip install -r requirements.txt
+```
+If it gives you error related to C++ compiling, try installing [this](https://github.com/bycloudai/InstallWindowsVSBuildingTools)
+
+- *To reuse the created conda environment after you close the prompt, you just need to*:
+```
+conda activate chunkmogrify
+```
+
+5. Run `python app.py`. When running for the first time, it will automatically download required
 resources, which are also several hundred megabytes. Progression of the download can be monitored
-in the command line window.  
+in the command line window. 
   
 To see if everything installed and configured properly, load up a photo and try running a projection
 step. If there are no errors, you are good to go.  
