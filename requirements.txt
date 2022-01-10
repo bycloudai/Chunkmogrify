@@ -30,9 +30,5 @@ typing-extensions==3.10.0.2
 urllib3==1.26.7
 zipp==3.6.0
 ninja
-# package location
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.9.1+cu102
-torchvision==0.10.1
 
 
