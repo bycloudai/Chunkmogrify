@@ -60,7 +60,7 @@ Requirements:
 Python 3.7 or newer
   
 We are going to use Anaconda3, download [Anaconda3](https://www.anaconda.com/products/individual) if you don't have it.  
-Follow this YouTube [tutorial]() to understand the installation process more easily and if you have any questions feel free to join my [discord](https://discord.gg/sE8R7e45MV) and ask there.
+Follow this YouTube [tutorial](https://youtu.be/xvgZf6QidSA) to understand the installation process more easily and if you have any questions feel free to join my [discord](https://discord.gg/sE8R7e45MV) and ask there.
 
 1. Create conda environment:
 ```
